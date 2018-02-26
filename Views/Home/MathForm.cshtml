@@ -1,0 +1,50 @@
+@model MathWizardForm.Models.UserResponse
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>MathForm</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css" />
+</head>
+<body>
+    <div class="panel panel-success">
+        <div class="panel-heading text-center"><h4>Math</h4></div>
+        <div class="panel-body">
+            <form class="p-a-1" asp-action="MathForm" method="post">
+                <div asp-validation-summary="All"></div>
+                <div class="form-group" width="window.innerwidth/2">
+                    <label asp-for="Left">Left Input:</label>
+                    <input class="form-control" asp-for="Left" />
+                </div>
+                <div class="form-group">
+                    <label asp-for="Right">Right Input:</label>
+                    <input class="form-control" asp-for="Right" />
+                </div>
+                <div class="form-group">
+                    <label>MathFunction</label>
+                    <select class="form-control" asp-for="MathFunction">
+                        <option value="">Choose an option</option>
+                        <option value="add">Add</option>
+                        <option value="sub">Subtract</option>
+                        <option value="mult">Multiply</option>
+                        <option value="div">Divide</option>
+                        <option value="mod">Modulus</option>
+                    </select>
+                </div>
+                <div class="text-center">
+                    <button class="btn btn-primary" type="submit">
+                        Solve
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
